@@ -1,0 +1,5 @@
+<h2>Add new client</h2>
+<button {{action (route-action "navigateTo" "index")}}>Cancel</button>
+<hr>
+<input value={{phone}} oninput={{action (mut phone) value="target.value"}}>
+<button {{action (route-action "addClient" phone)}}>Add</button>

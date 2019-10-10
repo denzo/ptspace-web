@@ -1,0 +1,11 @@
+$bm-overlay-background: rgba(0, 0, 0, 0.75);
+
+@import 'ember-burger-menu';
+
+html,
+body,
+body > div  {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

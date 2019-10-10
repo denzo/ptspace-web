@@ -17,6 +17,19 @@ module.exports = function(environment) {
       }
     },
 
+    torii: {
+      sessionServiceName: 'session'
+    },
+
+    firebase: {
+      apiKey: "AIzaSyBQHEZXFHswcqhaUVSmeHFtVeUrJrC7hPM",
+      authDomain: "dashfit-dev.firebaseapp.com",
+      databaseURL: "https://dashfit-dev.firebaseio.com",
+      projectId: "dashfit-dev",
+      storageBucket: "dashfit-dev.appspot.com",
+      messagingSenderId: "00000000000"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
