@@ -1,0 +1,9 @@
+steps:
+- name: 'gcr.io/cloud-builders/npm'
+  args: [ 'install -g ember-cli' ]
+- name: 'gcr.io/cloud-builders/npm'
+  args: [ 'install' ]
+- name: 'gcr.io/cloud-builders/npm'
+  args: [ 'ember build production' ]
+- name: 'gcr.io/[PROJECT_ID]/firebase'
+  args: [ 'deploy', '-P', 'dashfit-dev', '--token', '1/qUhkWPY6bowLdBcAPCrSjvydRXYDoWmStc_DAwjvo-k]']
