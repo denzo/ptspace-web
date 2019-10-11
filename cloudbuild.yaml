@@ -5,5 +5,5 @@ steps:
   args: [ 'install' ]
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'ember build production' ]
-- name: 'gcr.io/[PROJECT_ID]/firebase'
+- name: 'gcr.io/ptspace-web-dev/firebase'
   args: [ 'deploy', '-P', 'dashfit-dev', '--token', '1/qUhkWPY6bowLdBcAPCrSjvydRXYDoWmStc_DAwjvo-k]']
