@@ -1,0 +1,58 @@
+[debug] [2019-10-10T08:27:22.258Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T08:27:22.260Z] Command:       /Users/denzi/.nvm/versions/node/v12.11.1/bin/node /Users/denzi/.nvm/versions/node/v12.11.1/bin/firebase serve --only functions,firestore
+[debug] [2019-10-10T08:27:22.260Z] CLI Version:   7.5.0
+[debug] [2019-10-10T08:27:22.260Z] Platform:      darwin
+[debug] [2019-10-10T08:27:22.260Z] Node Version:  v12.11.1
+[debug] [2019-10-10T08:27:22.267Z] Time:          Thu Oct 10 2019 19:27:22 GMT+1100 (Australian Eastern Daylight Time)
+[debug] [2019-10-10T08:27:22.267Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-10T08:27:22.277Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-10T08:27:22.277Z] > authorizing via signed-in user
+[debug] [2019-10-10T08:27:22.277Z] [iam] checking project dashfit-dev for permissions ["firebase.projects.get"]
+[debug] [2019-10-10T08:27:22.279Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/dashfit-dev:testIamPermissions  
+
+[debug] [2019-10-10T08:27:23.759Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T08:27:23.761Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/dashfit-dev  
+ 
+[debug] [2019-10-10T08:27:24.286Z] <<< HTTP RESPONSE 200
+[info] i  firestore: Serving ALL traffic (including WebChannel) on http://localhost:8080
+[warn] ⚠  firestore: Support for WebChannel on a separate port (8081) is DEPRECATED and will go away soon. Please use port above instead.
+[debug] [2019-10-10T08:27:24.298Z] Starting emulator firestore with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/denzi/.cache/firebase/emulators/cloud-firestore-emulator-v1.9.0.jar","--webchannel_port",8081,"--port",8080],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator"]}
+[info] i  firestore: Emulator logging to firestore-debug.log
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: Emulator started at http://localhost:5000
+[debug] [2019-10-10T08:27:26.922Z] API endpoint: http://localhost:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8080
+
+Dev App Server is now running.
+
+
+[info] ✔  firestore: Emulator started at http://localhost:8080
+[info] i  functions: Watching "/Users/denzi/Documents/ptspace/ptspace-web/functions" for Cloud Functions...
+[debug] [2019-10-10T08:27:27.650Z] [runtime-status] Functions runtime initialized. {"cwd":"/Users/denzi/Documents/ptspace/ptspace-web/functions","node_version":"12.11.1"}
+[debug] [2019-10-10T08:27:27.651Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-10T08:27:27.657Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"/Users/denzi/Documents/ptspace/ptspace-web/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2019-10-10T08:27:27.658Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/denzi/Documents/ptspace/ptspace-web/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-10T08:27:27.659Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"/Users/denzi/Documents/ptspace/ptspace-web/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2019-10-10T08:27:27.762Z] addFirestoreTrigger "{\"eventTrigger\":{\"resource\":\"projects/dashfit-dev/databases/(default)/documents/client/{phone}\",\"eventType\":\"providers/cloud.firestore/eventTypes/document.create\",\"service\":\"firestore.googleapis.com\"}}"
+[debug] [2019-10-10T08:27:27.824Z] Oct 10, 2019 7:27:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2019-10-10T08:27:28.121Z] Oct 10, 2019 7:27:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+
+[info] ✔  functions[createUser]: firestore function initialized.
+[debug] [2019-10-10T08:45:08.820Z] Oct 10, 2019 7:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2019-10-10T08:45:08.824Z] Oct 10, 2019 7:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+
+[debug] [2019-10-10T08:45:08.847Z] Oct 10, 2019 7:45:08 PM io.gapi.emulators.netty.NotFoundHandler handleRequest
+INFO: Unknown request URI: /robots.txt
+
+[debug] [2019-10-10T08:45:09.528Z] Oct 10, 2019 7:45:09 PM io.gapi.emulators.netty.NotFoundHandler handleRequest
+INFO: Unknown request URI: /favicon.ico
+

@@ -14,6 +14,10 @@ export default Route.extend({
     debugger
     return session.fetch().catch((error) => {
       debugger
+    }).then((result) => {
+      debugger
+      const currentUser = get(this, 'session.currentUser');
+      return result;
     });
   },
 
@@ -28,6 +32,32 @@ export default Route.extend({
   },
 
   actions: {
+    logout() {
+      return get(this, 'session').close();
+    },
+    async loginWithGoogle() {
+      const session = get(this, 'session');
+      session.open('google').then(result => {
+        debugger
+      });
+
+      // const provider = new firebase.auth.GoogleAuthProvider();
+      // const auth = await get(this, 'firebaseApp').auth();
+      // return auth.signInWithPopup(provider).then(async(result) => {
+      //   debugger
+      //   const session = get(this, 'session');
+      //   // redirect on successful login
+      //   const currentUser1 = get(this, 'session.currentUser');
+      //   debugger
+      //
+      //   const openuser = await session.open();
+      //
+      //   const currentUser2 = get(this, 'session.currentUser');
+      //
+      //
+      //
+      //   return session.open()
+    },
     navigateTo(routeName, ...params) {
       this.transitionTo(routeName, ...params);
     },

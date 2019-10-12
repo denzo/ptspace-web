@@ -22,6 +22,12 @@
 
   {{#burger.outlet}}
     <button {{action burger.state.actions.toggle}}>Menu</button>
+    {{#if this.session.isAuthenticated}}
+      - {{currentUser.displayName}} |
+        <button {{action (route-action "logout")}}>Logout</button>
+    {{else}}
+      <button {{action (route-action "loginWithGoogle")}}>Login with Google</button>
+    {{/if}}
     {{outlet}}
   {{/burger.outlet}}
 {{/burger-menu}}
