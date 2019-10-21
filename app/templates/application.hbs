@@ -1,33 +1,33 @@
-{{#burger-menu animation="reveal" as |burger|}}
-  {{#burger.menu itemTagName="li" as |menu|}}
-    <button {{action burger.state.actions.close}}> X Close</button>
-    <button {{action
-      (pipe
-        (route-action "navigateTo" "clients.create")
-        burger.state.actions.close
-      )}}> + Add client</button>
-    <ul>
-      {{#each model.clients as |client|}}
-        {{#menu.item onclick=(route-action "navigateTo" "clients.client" client.phone)}}
-          <button {{action
-            (pipe
-              (route-action "navigateTo" "clients.client" client.phone)
-              burger.state.actions.close
-            )}}>Hello, {{client.name}} ({{client.phone}})</button>
-            <button {{action (route-action "deleteClient" client)}}>x</button>
-        {{/menu.item}}
-      {{/each}}
-    </ul>
-  {{/burger.menu}}
+{{#if this.session.isAuthenticated}}
+  {{#burger-menu animation="reveal" as |burger|}}
+    {{#burger.menu itemTagName="li" as |menu|}}
+      <button {{action burger.state.actions.close}}> X Close</button>
+      <button {{action
+        (pipe
+          (route-action "navigateTo" "clients.create")
+          burger.state.actions.close
+        )}}> + Add client</button>
+      <ul>
+        {{#each model.clients as |client|}}
+          {{#menu.item onclick=(route-action "navigateTo" "clients.client" client.phone)}}
+            <button {{action
+              (pipe
+                (route-action "navigateTo" "clients.client" client.phone)
+                burger.state.actions.close
+              )}}>Hello, {{client.name}} ({{client.phone}})</button>
+              <button {{action (route-action "deleteClient" client)}}>x</button>
+          {{/menu.item}}
+        {{/each}}
+      </ul>
+    {{/burger.menu}}
 
-  {{#burger.outlet}}
-    <button {{action burger.state.actions.toggle}}>Menu</button>
-    {{#if this.session.isAuthenticated}}
-      - {{currentUser.displayName}} |
-        <button {{action (route-action "logout")}}>Logout</button>
-    {{else}}
-      <button {{action (route-action "loginWithGoogle")}}>Login with Google</button>
-    {{/if}}
-    {{outlet}}
-  {{/burger.outlet}}
-{{/burger-menu}}
+    {{#burger.outlet}}
+      <button {{action burger.state.actions.toggle}}>Menu</button>
+      | {{currentUser.displayName}} |
+      <button {{action (route-action "logout")}}>Logout</button>
+      {{outlet}}
+    {{/burger.outlet}}
+  {{/burger-menu}}
+{{else}}
+  {{outlet}}
+{{/if}}

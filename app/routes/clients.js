@@ -4,8 +4,7 @@ import { get } from '@ember/object';
 export default Route.extend({
 
   model() {
-    const clients = get(this.modelFor('application'), 'clients');
-    return clients;
+    return this.store.findAll('client');
   }
 
 });

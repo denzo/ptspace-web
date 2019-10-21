@@ -11,7 +11,6 @@ export default class FirebaseToriiAdapter extends EmberObject.extend({
     firebaseApp: service('firebase-app')
 }) {
     async open(options) {
-      debugger
       const provider = new firebase.auth.GoogleAuthProvider();
       const auth = await get(this, 'firebaseApp').auth();
       return auth.signInWithPopup(provider);

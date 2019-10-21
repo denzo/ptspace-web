@@ -7,7 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('clients', function() {
+  this.route('login');
+  this.authenticatedRoute('clients', function() {
     this.route('client', { path: '/:clientId' });
     this.route('index', { path: '/' });
     this.route('create');
